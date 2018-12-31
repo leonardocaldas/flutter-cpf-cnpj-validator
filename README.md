@@ -10,7 +10,7 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  cpf_cnpj_validator: "^1.0.0"
+  cpf_cnpj_validator: "^1.0.2"
 ```
   
 ## Usage CPF  
@@ -68,8 +68,9 @@ All the credits go to the person who created the projects in Javascript.
 
 If you guys like this plugin, make sure to star the original projects. I'll leave the links below:
 
-https://github.com/fnando/cpf
-https://github.com/fnando/cpf
+[https://github.com/fnando/cpf](https://github.com/fnando/cpf)
+
+[https://github.com/fnando/cnpj](https://github.com/fnando/cnpj)
 
 ## Contributing
 
