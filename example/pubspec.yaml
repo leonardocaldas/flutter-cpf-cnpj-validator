@@ -1,0 +1,21 @@
+name: example
+description: An example of how to use Flutter plugin CPF&#x2F;CNPJ validator.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cpf_cnpj_validator:
+    path: ../
+
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true

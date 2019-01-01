@@ -16,3 +16,8 @@ This release includes:
 ## v1.0.3
 
 * Fixing README.md
+
+## v1.0.4
+
+* Adding Example
+* Changing description
