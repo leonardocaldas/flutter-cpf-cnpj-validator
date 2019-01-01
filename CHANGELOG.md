@@ -12,3 +12,7 @@ This release includes:
 ## v1.0.2
 
 * Fixing README.md
+
+## v1.0.3
+
+* Fixing README.md
