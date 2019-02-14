@@ -49,13 +49,23 @@ class CPFValidator {
   }
 
   static String strip(String cpf) {
-    RegExp regex = RegExp(STRIP_REGEX);
+    RegExp regExp = RegExp(STRIP_REGEX);
     cpf = cpf == null ? "" : cpf;
 
-    return cpf.replaceAll(regex, "");
+    return cpf.replaceAll(regExp, "");
+  }
+
+  static bool validateInputFormat(String cpf) {
+    RegExp regExp = RegExp(r'^(\d{3}.\d{3}.\d{3}-\d{2})|(\d{11})$');
+
+    return regExp.hasMatch(cpf);
   }
 
   static bool isValid(String cpf) {
+    if (!validateInputFormat(cpf)) {
+      return false;
+    }
+
     String stripped = strip(cpf);
 
     // CPF must be defined

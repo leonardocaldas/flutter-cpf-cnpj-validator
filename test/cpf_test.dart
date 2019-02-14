@@ -8,6 +8,8 @@ void main() {
     expect(CPFValidator.isValid("35999906032"), true);
     expect(CPFValidator.isValid("35999906031"), false);
     expect(CPFValidator.isValid("033461671002"), false);
+    expect(CPFValidator.isValid("033461671002@mail"), false);
+    expect(CPFValidator.isValid("03.3461.67100-2"), false);
 
     List<String> blackListed = [
       "00000000000",
