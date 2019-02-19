@@ -21,3 +21,7 @@ This release includes:
 
 * Adding Example
 * Changing description
+
+## v1.0.5
+
+* Adding new parameter to control whether or not the validation method should strip the values

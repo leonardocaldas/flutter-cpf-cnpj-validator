@@ -10,7 +10,7 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  cpf_cnpj_validator: ^1.0.4
+  cpf_cnpj_validator: ^1.0.5
 ```
   
 ## Usage CPF  
