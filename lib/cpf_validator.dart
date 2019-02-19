@@ -21,7 +21,7 @@ class CPFValidator {
   // You can learn more about the algorithm on [wikipedia (pt-br)](https://pt.wikipedia.org/wiki/D%C3%ADgito_verificador)
   static int _verifierDigit(String cpf) {
     List<int> numbers =
-        cpf.split("").map((number) => int.parse(number, radix: 10)).toList();
+    cpf.split("").map((number) => int.parse(number, radix: 10)).toList();
 
     int modulus = numbers.length + 1;
 
