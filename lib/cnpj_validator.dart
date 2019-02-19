@@ -1,7 +1,6 @@
 import 'dart:math';
 
 class CNPJValidator {
-
   static const List<String> BLACKLIST = [
     "00000000000000",
     "11111111111111",
@@ -15,16 +14,15 @@ class CNPJValidator {
     "99999999999999"
   ];
 
-
   static const STRIP_REGEX = r'[^\d]';
-
 
   // Compute the Verifier Digit (or "Dígito Verificador (DV)" in PT-BR).
   // You can learn more about the algorithm on [wikipedia (pt-br)](https://pt.wikipedia.org/wiki/D%C3%ADgito_verificador)
   static int _verifierDigit(String cnpj) {
     int index = 2;
 
-    List<int> reverse = cnpj.split("").map((s) => int.parse(s)).toList().reversed.toList();
+    List<int> reverse =
+        cnpj.split("").map((s) => int.parse(s)).toList().reversed.toList();
 
     int sum = 0;
 
@@ -52,29 +50,32 @@ class CNPJValidator {
     return cnpj.replaceAll(regex, "");
   }
 
-  static bool isValid(String cnpj) {
-    String stripped = strip(cnpj);
+  static bool isValid(String cnpj, [stripBeforeValidation = true]) {
+    if (stripBeforeValidation) {
+      cnpj = strip(cnpj);
+    }
 
     // cnpj must be defined
-    if (stripped == null || stripped.isEmpty) {
+    if (cnpj == null || cnpj.isEmpty) {
       return false;
     }
 
     // cnpj must have 14 chars
-    if (stripped.length != 14) {
+    if (cnpj.length != 14) {
       return false;
     }
 
     // cnpj can't be blacklisted
-    if (BLACKLIST.indexOf(stripped) != -1) {
+    if (BLACKLIST.indexOf(cnpj) != -1) {
       return false;
     }
 
-    String numbers = stripped.substring(0, 12);
+    String numbers = cnpj.substring(0, 12);
     numbers += _verifierDigit(numbers).toString();
     numbers += _verifierDigit(numbers).toString();
 
-    return numbers.substring(numbers.length - 2) == stripped.substring(stripped.length - 2);
+    return numbers.substring(numbers.length - 2) ==
+        cnpj.substring(cnpj.length - 2);
   }
 
   static String generate([bool useFormat = false]) {

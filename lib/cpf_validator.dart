@@ -1,7 +1,6 @@
 import 'dart:math';
 
 class CPFValidator {
-
   static const List<String> BLACKLIST = [
     "00000000000",
     "11111111111",
@@ -16,17 +15,13 @@ class CPFValidator {
     "12345678909"
   ];
 
-
   static const STRIP_REGEX = r'[^\d]';
-
 
   // Compute the Verifier Digit (or "Dígito Verificador (DV)" in PT-BR).
   // You can learn more about the algorithm on [wikipedia (pt-br)](https://pt.wikipedia.org/wiki/D%C3%ADgito_verificador)
   static int _verifierDigit(String cpf) {
-    List<int> numbers = cpf
-        .split("")
-        .map((number) => int.parse(number, radix: 10))
-        .toList();
+    List<int> numbers =
+        cpf.split("").map((number) => int.parse(number, radix: 10)).toList();
 
     int modulus = numbers.length + 1;
 
@@ -55,39 +50,32 @@ class CPFValidator {
     return cpf.replaceAll(regExp, "");
   }
 
-  static bool validateInputFormat(String cpf) {
-    RegExp regExp = RegExp(r'^(\d{3}.\d{3}.\d{3}-\d{2})|(\d{11})$');
-
-    return regExp.hasMatch(cpf);
-  }
-
-  static bool isValid(String cpf) {
-    if (!validateInputFormat(cpf)) {
-      return false;
+  static bool isValid(String cpf, [stripBeforeValidation = true]) {
+    if (stripBeforeValidation) {
+      cpf = strip(cpf);
     }
 
-    String stripped = strip(cpf);
-
     // CPF must be defined
-    if (stripped == null || stripped.isEmpty) {
+    if (cpf == null || cpf.isEmpty) {
       return false;
     }
 
     // CPF must have 11 chars
-    if (stripped.length != 11) {
+    if (cpf.length != 11) {
       return false;
     }
 
     // CPF can't be blacklisted
-    if (BLACKLIST.indexOf(stripped) != -1) {
+    if (BLACKLIST.indexOf(cpf) != -1) {
       return false;
     }
 
-    String numbers = stripped.substring(0, 9);
+    String numbers = cpf.substring(0, 9);
     numbers += _verifierDigit(numbers).toString();
     numbers += _verifierDigit(numbers).toString();
 
-    return numbers.substring(numbers.length - 2) == stripped.substring(stripped.length - 2);
+    return numbers.substring(numbers.length - 2) ==
+        cpf.substring(cpf.length - 2);
   }
 
   static String generate([bool useFormat = false]) {
