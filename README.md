@@ -25,6 +25,11 @@ CPFValidator.isValid("35999906032") // true
 CPFValidator.isValid("35999906031") // false
 CPFValidator.isValid("033461671002") // false
 
+// If you dont want the validation method to strip the values
+// Just use false in the second argument
+CPFValidator.isValid("334.616.710-02", false) // false
+CPFValidator.isValid("35999906032@mail", false) // false
+
 
 // Other utility methods
 CPFValidator.format("33461671002") // Result: 334.616.710-02
@@ -49,6 +54,10 @@ CNPJValidator.isValid("17942159000128") // true
 CNPJValidator.isValid("17942159000127") // false
 CNPJValidator.isValid("017942159000128") // false
 
+// If you dont want the validation method to strip the values
+// Just use false in the second argument
+CNPJValidator.isValid("12.175.094/0001-19", false) // false
+CNPJValidator.isValid("17942159000128@mail", false) // false
 
 // Other utility methods
 CNPJValidator.format("85137090000110") // Result: 85.137.090/0001-10
