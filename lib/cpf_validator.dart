@@ -43,14 +43,14 @@ class CPFValidator {
         regExp, (Match m) => "${m[1]}.${m[2]}.${m[3]}-${m[4]}");
   }
 
-  static String strip(String cpf) {
+  static String strip(String? cpf) {
     RegExp regExp = RegExp(STRIP_REGEX);
     cpf = cpf == null ? "" : cpf;
 
     return cpf.replaceAll(regExp, "");
   }
 
-  static bool isValid(String cpf, [stripBeforeValidation = true]) {
+  static bool isValid(String? cpf, [stripBeforeValidation = true]) {
     if (stripBeforeValidation) {
       cpf = strip(cpf);
     }
