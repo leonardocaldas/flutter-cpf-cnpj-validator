@@ -1,6 +1,8 @@
 name: example
 description: An example of how to use Flutter plugin CPF&#x2F;CNPJ validator.
 
+publish_to: 'none'
+
 version: 1.0.0+1
 
 environment:

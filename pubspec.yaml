@@ -5,7 +5,7 @@ author: Leonardo Caldas <leonardo.ferreira.caldas@gmail.com>
 homepage: https://github.com/leonardocaldas/flutter-cpf-cnpj-validator
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
