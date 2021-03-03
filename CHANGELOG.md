@@ -25,3 +25,7 @@ This release includes:
 ## v1.0.5
 
 * Adding new parameter to control whether or not the validation method should strip the values
+
+## v2.0.0
+
+* Migrating to null safety.
