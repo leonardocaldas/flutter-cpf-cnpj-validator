@@ -43,14 +43,14 @@ class CNPJValidator {
         regExp, (Match m) => "${m[1]}.${m[2]}.${m[3]}/${m[4]}-${m[5]}");
   }
 
-  static String strip(String cnpj) {
+  static String strip(String? cnpj) {
     RegExp regex = RegExp(STRIP_REGEX);
     cnpj = cnpj == null ? "" : cnpj;
 
     return cnpj.replaceAll(regex, "");
   }
 
-  static bool isValid(String cnpj, [stripBeforeValidation = true]) {
+  static bool isValid(String? cnpj, [stripBeforeValidation = true]) {
     if (stripBeforeValidation) {
       cnpj = strip(cnpj);
     }
