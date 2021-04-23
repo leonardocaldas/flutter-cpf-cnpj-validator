@@ -26,6 +26,6 @@ This release includes:
 
 * Adding new parameter to control whether or not the validation method should strip the values
 
-## v1.0.6
+## 2.0.0-nullsafety
 
 * Migrating to Null Safety
