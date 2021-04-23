@@ -1,5 +1,5 @@
 
-# CPF/CNPJ Validator 
+# CPF/CNPJ Validator
   
 A Flutter plugin to validate CPF/CNPJ numbers from Brazil.  
 
@@ -10,7 +10,7 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  cpf_cnpj_validator: ^1.0.5
+  cpf_cnpj_validator: 2.0.0-nullsafety
 ```
   
 ## Usage CPF  
