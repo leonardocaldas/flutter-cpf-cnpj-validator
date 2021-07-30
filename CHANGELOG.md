@@ -1,3 +1,8 @@
+## v2.1.0
+
+* Remove hard dependency of Flutter.
+* Move `test` package dependency to `dev_dependencies`.
+
 ## v1.0.0
 
 This release includes:

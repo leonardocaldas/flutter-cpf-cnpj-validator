@@ -1,6 +1,6 @@
 name: example
 description: An example of how to use Flutter plugin CPF&#x2F;CNPJ validator.
-publish_to: 'none' #Remove this line if you wish to publish in pub.dev
+publish_to: "none" #Remove this line if you wish to publish in pub.dev
 
 version: 1.0.0+1
 
