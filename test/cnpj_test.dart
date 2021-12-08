@@ -1,5 +1,5 @@
 import 'package:cpf_cnpj_validator/cnpj_validator.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 void main() {
   test("Test CNPJ validator", () {
